@@ -38,10 +38,12 @@ test:
 about:
   home: https://github.com/holoviz/hvsampledata
   summary: Datasets for the HoloViz projects
+  description: Datasets for the HoloViz projects
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   dev_url: https://github.com/holoviz/hvsampledata
+  doc_url: https://github.com/holoviz/hvsampledata/blob/main/README.md
 
 extra:
   recipe-maintainers:
