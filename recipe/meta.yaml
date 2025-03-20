@@ -10,18 +10,19 @@ source:
   sha256: 81d6f159beddbd01060546740aba1df946cda24ce4dcce31339103a3c287a190
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  # panel >=0.13.0 and nodejs aren't available on s390x
+  skip: True # [py<39 or s390x]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - hatchling
     - hatch-vcs
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - platformdirs >=3.0.0
     - urllib3 >=1.26.0
 
@@ -32,13 +33,15 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python
 
 about:
   home: https://github.com/holoviz/hvsampledata
   summary: Datasets for the HoloViz projects
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
+  dev_url: https://github.com/holoviz/hvsampledata
 
 extra:
   recipe-maintainers:
