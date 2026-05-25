@@ -12,8 +12,8 @@ source:
 build:
   number: 0
   # panel >=0.13.0 and nodejs aren't available on s390x
-number: 0
-skip: true  # [py<39]
+  number: 0
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
